@@ -20,6 +20,9 @@ app.use(express_1.default.json({ limit: '20kb' }));
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.static('public'));
+app.get('/', (req, res) => {
+    res.send("Server is running fine");
+});
 const user_router_1 = __importDefault(require("./routers/user.router"));
 app.use('/api/v1/user', user_router_1.default);
 const books_router_1 = __importDefault(require("./routers/books.router"));
